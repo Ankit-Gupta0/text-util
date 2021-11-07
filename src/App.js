@@ -27,9 +27,9 @@ function App() {
   const toggleMode = ()=>{
     if(mode === 'light'){
       setMode('dark');
-      document.body.style.backgroundColor ='green';
-      showAlert("GreenMode has been enabled", "success");
-      document.title = "TextUtils - Dark Mode";
+      document.body.style.backgroundColor ='#FFD700';
+      showAlert("GoldenMode has been enabled", "success");
+      // document.title = "TextUtils - Golden Mode";
       // setInterval(()=> {
       //   document.title = "Install TextUtils Now!"
       // }, 2000);
@@ -37,11 +37,12 @@ function App() {
       //   document.title = "Install TextUtils is Amazing!"
       // }, 1500);
     
-    }else{
+    }
+    else{
       setMode('light');
       document.body.style.backgroundColor ='white';
       showAlert("LightMode has been enabled", "success");
-      document.title = "TextUtils - Light Mode";
+      // document.title = "TextUtils - Light Mode";
    }
   }
   return (
@@ -57,7 +58,7 @@ function App() {
           {/* <About /> */}
         {/* </Route>
         <Route exact path="/"> */}
-          <TextForm showAlert={showAlert} heading="Enter the text to analyse below" mode={mode}/>
+          <TextForm showAlert={showAlert} heading="Try TextUtils - Word Counter, Character Counter, Remove extra spaces" mode={mode}/>
         {/* </Route>
       </Switch> */}
     </div>
