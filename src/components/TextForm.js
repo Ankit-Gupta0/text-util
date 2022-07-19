@@ -21,11 +21,7 @@ export default function TextForm(props) {
         props.showAlert("TextArea Cleared","success");
     }
     const handleCopy = ()=>{
-        // let newText = document.getElementById("myBox");
-        // newText.select();
-        // navigator.clipboard.writeText(newText.value);
         navigator.clipboard.writeText(text);
-        // document.getSelection().removeAllRanges();
         props.showAlert("Copied to Clipboard","success");
     }
     const handleExtraSpaces = ()=>{
@@ -38,15 +34,13 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
     const [text, setText] = useState('');
-    // text = "new text"; wrong way to change the state
-    // setText("new text"); correct way
     return (
         <>
         <div className="container" style={{color:props.mode === 'dark' ? 'white':'black'}}>
             <h1 className="mb-4">{props.heading}</h1>
             <div className="mb-3">
             <textarea className="form-control" value={text} onChange = {handleOnChange} id="myBox" rows="8" style={{backgroundColor
-            :props.mode === 'dark' ? '#FFC300':'white',color:props.mode === 'dark' ? 'white':'black'}}></textarea>
+            :props.mode === 'dark' ? '#303030':'white',color:props.mode === 'dark' ? 'white':'black'}}></textarea>
             </div>
             <button disabled = {text.length===0}  className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
                 Convert to Uppercase
